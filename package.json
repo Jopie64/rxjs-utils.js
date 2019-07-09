@@ -1,0 +1,25 @@
+{
+  "name": "rxjs-utils",
+  "version": "1.0.0",
+  "description": "Set of extra utilities mostly for rxjs",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jasmine-ts --config=jasmine.json"
+  },
+  "keywords": [
+    "RxJS"
+  ],
+  "author": "Johan 't Hart",
+  "license": "ISC",
+  "dependencies": {
+    "rxjs": "^6.5.2"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^3.3.13",
+    "jasmine": "^3.4.0",
+    "jasmine-ts": "^0.3.0",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
+  }
+}
