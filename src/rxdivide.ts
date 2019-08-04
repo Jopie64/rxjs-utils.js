@@ -17,10 +17,10 @@ export const divide: DivideFunc = <TKey extends keyof {[key: string]: any}, TVal
 
     let srcSubscription: Subscription | null = null;
 
-    const completeAll = (e?: any) => {
+    const completeAll = (error?: any) => {
         for (let key in divisions) {
-            if (e !== undefined) {
-                divisions[key].error(e);
+            if (error !== undefined) {
+                divisions[key].error(error);
             } else {
                 divisions[key].complete();
             }
