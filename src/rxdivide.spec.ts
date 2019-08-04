@@ -11,7 +11,7 @@ describe('utils', () => {
 
         const makeVal = (idGroup: number, val: string) => ({ idGroup, val });
 
-        it('devides the stream', () => {
+        it('divides the stream', () => {
             const value$ = new Subject<GroupedValue>();
             const getDivision = divide(idGroupSelector, value$);
 
