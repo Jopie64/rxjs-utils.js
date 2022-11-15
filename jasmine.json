@@ -1,7 +1,10 @@
 
 {
-    "spec_dir": "src",
-    "spec_files": ["**/*.spec.ts"],
-    "oneFailurePerSpec": false,
-    "random": true
+  "spec_dir": "src",
+  "spec_files": ["**/*.spec.ts"],
+  "oneFailurePerSpec": false,
+  "random": true,
+  "helpers": [
+    "jasmine-typescript-helper.js"
+  ]
 }
