@@ -1,4 +1,4 @@
-import 'jasmine';
+import { describe, it, expect, vi } from 'vitest';
 import { logSubUnsub, resetCreationIdGen } from './rxlog';
 import { makeConsoleLogger } from './logger';
 import { of, throwError } from 'rxjs';
@@ -9,7 +9,7 @@ describe('utils', () => {
         it('logs all observable events', () => {
             resetCreationIdGen();
             const logger = makeConsoleLogger('test');
-            spyOn(logger, 'log');
+            vi.spyOn(logger, 'log');
 
             // Creating the observable logger will result in 'CREATED' message
             const obs = of(1, 2, 3).pipe(logSubUnsub(logger, true));
@@ -40,14 +40,14 @@ describe('utils', () => {
         it('logs errors', () => {
             resetCreationIdGen();
             const logger = makeConsoleLogger('test');
-            spyOn(logger, 'log');
+            vi.spyOn(logger, 'log');
 
-            const obs = throwError(new Error('uhoh...')).pipe(logSubUnsub(logger, true));
+            const obs = throwError(() => new Error('uhoh...')).pipe(logSubUnsub(logger, true));
 
             expect(logger.log).toHaveBeenCalledTimes(1);
             expect(logger.log).toHaveBeenCalledWith('1-CREATED');
 
-            obs.subscribe(null, () => {});
+            obs.subscribe({ error: () => {} });
             expect(logger.log).toHaveBeenCalledTimes(4);
             expect(logger.log).toHaveBeenCalledWith('1-1-SUBSCRIBED-1');
             expect(logger.log).toHaveBeenCalledWith('1-1-ERROR-2', new Error('uhoh...'));
