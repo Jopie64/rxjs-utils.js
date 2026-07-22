@@ -1,5 +1,4 @@
-import { OperatorFunction } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import { OperatorFunction, filter, map } from 'rxjs';
 
 export const filterNull = <T>(): OperatorFunction<T | null | undefined, T> => obs =>
   obs.pipe(

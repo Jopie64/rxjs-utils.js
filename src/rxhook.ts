@@ -10,7 +10,7 @@ export interface IObservableHook<T> {
 export type HookMaker<T> = () => IObservableHook<T>;
 
 export const hookObs = <T>(hookMaker: HookMaker<T>): MonoTypeOperatorFunction<T> =>
-  (source: Observable<T>): Observable<T> => Observable.create((observer: Observer<T>) => {
+  (source: Observable<T>): Observable<T> => new Observable<T>((observer: Observer<T>) => {
     const h = hookMaker();
     const subscription = source.subscribe(
       n => {
