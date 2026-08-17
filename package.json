@@ -1,6 +1,6 @@
 {
   "name": "rxjs-utilities",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Set of extra utilities mostly for rxjs",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
