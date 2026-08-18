@@ -2,7 +2,7 @@
 
 Set of extra utilities mostly for [RxJS](https://www.learnrxjs.io/), collected over time.
 
-It could be that some of them are already available in main RxJS, but are done diffent than I think. If that is the case, please notify me.
+It could be that some of them are already available in main RxJS, but are done different than I think. If that is the case, please notify me.
 
 See `*.spec.ts` files for some usage examples.
 
